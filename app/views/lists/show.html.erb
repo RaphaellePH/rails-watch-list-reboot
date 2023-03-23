@@ -1,6 +1,14 @@
-<%= @list.name %>
-<ul>
-  <% list_bookmarks.each do |bookmark| %>
-    <li><%= bookmark.movie.title %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <h1><%= @list.name %></h1>
+  <ul>
+    <% @list_bookmarks.each do |bookmark| %>
+      <li>
+        <%= bookmark.movie.title %> - <%= bookmark.comment %> | 
+        <%= link_to list_bookmark_path(@list) do %>
+          <i class="fa-solid fa-trash"></i>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+  <%= link_to "Add movie", new_list_bookmark_path(@list) %>
+</div>

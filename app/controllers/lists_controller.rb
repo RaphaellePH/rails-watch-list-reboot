@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   def index
-    @lists = Lists.all
+    @lists = List.all
   end
 
   def new
